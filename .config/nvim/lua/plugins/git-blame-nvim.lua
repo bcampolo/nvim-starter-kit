@@ -1,5 +1,6 @@
 -- Git Blame
 return {
+  -- https://github.com/f-person/git-blame.nvim
   'f-person/git-blame.nvim',
   event = 'VeryLazy',
   opts = {

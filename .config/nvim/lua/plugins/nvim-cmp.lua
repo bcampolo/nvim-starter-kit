@@ -1,19 +1,27 @@
 -- Auto-completion / Snippets
 return {
+  -- https://github.com/hrsh7th/nvim-cmp
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   dependencies = {
-    -- Snippet Engine & its associated nvim-cmp source
+    -- Snippet engine & associated nvim-cmp source
+    -- https://github.com/L3MON4D3/LuaSnip
     'L3MON4D3/LuaSnip',
+    -- https://github.com/saadparwaiz1/cmp_luasnip
     'saadparwaiz1/cmp_luasnip',
 
-    -- Adds LSP completion capabilities
+    -- LSP completion capabilities
+    -- https://github.com/hrsh7th/cmp-nvim-lsp
     'hrsh7th/cmp-nvim-lsp',
 
-    -- Adds a number of user-friendly snippets
+    -- Additional user-friendly snippets
+    -- https://github.com/rafamadriz/friendly-snippets
     'rafamadriz/friendly-snippets',
+    -- https://github.com/hrsh7th/cmp-buffer
     'hrsh7th/cmp-buffer',
+    -- https://github.com/hrsh7th/cmp-path
     'hrsh7th/cmp-path',
+    -- https://github.com/hrsh7th/cmp-cmdline
     'hrsh7th/cmp-cmdline',
   },
   config = function()

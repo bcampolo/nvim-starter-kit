@@ -1,5 +1,6 @@
 -- Theme/Colorscheme
 return {
+  -- https://github.com/rebelot/kanagawa.nvim
   'rebelot/kanagawa.nvim', -- You can replace this with your favorite colorscheme
   lazy = false, -- We want the colorscheme to load immediately when starting Neovim
   priority = 1000, -- Load the colorscheme before other non-lazy-loaded plugins
