@@ -77,7 +77,7 @@ return {
       pylsp = {
         plugins = {
           -- formatter options
-          --wt: black = { enabled = true },
+          --no thanks: black = { enabled = true },
           autopep8 = { enabled = false },
           yapf = { enabled = false },
           -- linter options
