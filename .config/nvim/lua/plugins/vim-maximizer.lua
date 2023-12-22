@@ -5,4 +5,3 @@ return {
   event = 'VeryLazy',
 }
 
-

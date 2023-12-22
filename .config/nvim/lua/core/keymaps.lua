@@ -9,6 +9,7 @@ keymap.set("i", "ii", "<ESC>") -- exit insert mode with ii
 keymap.set("n", "<leader>wq", ":wq<CR>") -- save and quit
 keymap.set("n", "<leader>qq", ":q!<CR>") -- quit without saving
 keymap.set("n", "<leader>ww", ":w<CR>") -- save
+keymap.set("n", "gx", ":!open <c-r><c-a><CR>") -- open URL under cursor
 
 -- Split window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
