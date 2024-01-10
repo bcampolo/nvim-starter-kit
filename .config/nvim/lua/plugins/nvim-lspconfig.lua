@@ -52,6 +52,11 @@ return {
         lspconfig[server_name].setup({
           on_attach = lsp_attach,
           capabilities = lsp_capabilities,
+          handlers = {
+            -- Add borders to LSP popups
+            ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = 'rounded'}),
+            ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = 'rounded' }),
+          }
         })
       end
     })
