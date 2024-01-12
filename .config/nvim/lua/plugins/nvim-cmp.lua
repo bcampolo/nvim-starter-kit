@@ -27,14 +27,17 @@ return {
   config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')
-
-    vim.opt.completeopt = "menu,menuone,noselect"
+    require('luasnip.loaders.from_vscode').lazy_load()
+    luasnip.config.setup({})
 
     cmp.setup({
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
+      },
+      completion = {
+        completeopt = 'menu,menuone,noinsert',
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
