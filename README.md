@@ -107,3 +107,9 @@ After installing all of the prerequisites, you can start Neovim by running `nvim
 
 ## Suggestions / Pull Requests ##
 If you run into any issues or have any suggestions for plugins that you feel should be part of the Starter Kit, open a PR that includes the updates and I'll review/merge it as soon as I can.
+
+## Starter Kit Variants ##
+- [Neovim Starter Kit](https://github.com/bcampolo/nvim-starter-kit)
+- [Neovim Starter Kit for Python](https://github.com/bcampolo/nvim-starter-kit/tree/python#neovim-starter-kit-for-python-)
+- [Neovim Starter Kit with Games](https://github.com/bcampolo/nvim-starter-kit/tree/games#neovim-starter-kit-with-games-)
+

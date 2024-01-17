@@ -41,33 +41,38 @@ return {
       current_frame = "",
       expanded = ""
     },
-    layouts = { {
-      elements = { {
-        id = "scopes",
-        size = 0.5
-      }, {
-          id = "stacks",
-          size = 0.34
-        }, {
-          id = "watches",
-          size = 0.15
-        }, {
-          id = "breakpoints",
-          size = 0.01
-        } },
-      position = "left",
-      size = 50
-    }, {
-        elements = { {
-          id = "console",
-          size = 0.75
-        }, {
-            id = "repl",
-            size = 0.25
-          } },
-        position = "bottom",
-        size = 10
-      } },
+    layouts = {
+      {
+        elements = {
+          {
+            id = "scopes",
+            size = 0.50
+          },
+          {
+            id = "stacks",
+            size = 0.30
+          },
+          {
+            id = "watches",
+            size = 0.10
+          },
+          {
+            id = "breakpoints",
+            size = 0.10
+          }
+        },
+        size = 40,
+        position = "left", -- Can be "left" or "right"
+      },
+      {
+        elements = {
+          "repl",
+          "console",
+        },
+        size = 10,
+        position = "bottom", -- Can be "bottom" or "top"
+      }
+    },
     mappings = {
       edit = "e",
       expand = { "<CR>", "<2-LeftMouse>" },
@@ -90,11 +95,13 @@ return {
     end
 
     dap.listeners.before.event_terminated["dapui_config"] = function()
-      require('dapui').close()
+      -- Commented to prevent DAP UI from closing when unit tests finish
+      -- require('dapui').close()
     end
 
     dap.listeners.before.event_exited["dapui_config"] = function()
-      require('dapui').close()
+      -- Commented to prevent DAP UI from closing when unit tests finish
+      -- require('dapui').close()
     end
 
     -- Add dap configurations based on your language/adapter settings

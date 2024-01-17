@@ -22,21 +22,21 @@ return {
   config = function ()
     require('mason').setup()
     require('mason-lspconfig').setup({
-      -- Update this list to the language servers you need installed
+      -- Install these LSPs automatically
       ensure_installed = {
-        -- "bashls", # requires npm to be installed
-        -- "cssls", # requires npm to be installed
-        -- "html", # requires npm to be installed
-        "gradle_ls",
-        "groovyls",
-        "lua_ls",
-        -- "intelephense", # requires npm to be installed
-        -- "jsonls", # requires npm to be installed
-        "lemminx",
-        "marksman",
-        "quick_lint_js",
-        -- "tsserver", # requires npm to be installed
-        -- "yamlls", # requires npm to be installed
+        -- 'bashls', -- requires npm to be installed
+        -- 'cssls', -- requires npm to be installed
+        -- 'html', -- requires npm to be installed
+        'gradle_ls',
+        'groovyls',
+        'lua_ls',
+        -- 'intelephense', -- requires npm to be installed
+        -- 'jsonls', -- requires npm to be installed
+        'lemminx',
+        'marksman',
+        'quick_lint_js',
+        -- 'tsserver', -- requires npm to be installed
+        -- 'yamlls', -- requires npm to be installed
       }
     })
 
@@ -52,6 +52,11 @@ return {
         lspconfig[server_name].setup({
           on_attach = lsp_attach,
           capabilities = lsp_capabilities,
+          handlers = {
+            -- Add borders to LSP popups
+            ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = 'rounded'}),
+            ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = 'rounded' }),
+          }
         })
       end
     })
@@ -99,7 +104,6 @@ return {
       },
       capabilities = lsp_capabilities,
     }
-
   end
 }
 
