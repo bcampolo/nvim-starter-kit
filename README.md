@@ -110,6 +110,6 @@ If you run into any issues or have any suggestions for plugins that you feel sho
 
 ## Starter Kit Variants ##
 - [Neovim Starter Kit](https://github.com/bcampolo/nvim-starter-kit)
-- [Neovim Starter Kit for Python](https://github.com/bcampolo/nvim-starter-kit/tree/python#neovim-starter-kit-for-python-)
-- [Neovim Starter Kit with Games](https://github.com/bcampolo/nvim-starter-kit/tree/games#neovim-starter-kit-with-games-)
+- [Neovim Starter Kit for Python](https://github.com/bcampolo/nvim-starter-kit/blob/python/README.md#neovim-starter-kit-for-python-)
+- [Neovim Starter Kit with Games](https://github.com/bcampolo/nvim-starter-kit/blob/games/README.md#neovim-starter-kit-with-games-)
 
