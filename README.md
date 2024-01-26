@@ -20,7 +20,7 @@ This is my personalized Neovim Starter Kit.  IMO it is a very well structured, c
 - [Nerd Font](https://www.nerdfonts.com/) - Needed to see nice icons in Neovim
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - Needed for Telescope Fuzzy Finder
 - [xclip](https://linuxconfig.org/how-to-use-xclip-on-linux) - Needed for system clipboard support
-- [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - Needed for some LSP servers (see commented lines in [lsp.lua](.config/nvim/lua/plugins/lsp.lua))
+- [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - Needed for some LSP servers (see commented lines in [nvim-lspconfig.lua](.config/nvim/lua/plugins/nvim-lspconfig.lua))
 
 ## Optional ##
 - **TMUX**
