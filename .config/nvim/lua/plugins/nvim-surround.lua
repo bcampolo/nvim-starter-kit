@@ -1,5 +1,7 @@
+-- Add, Change, Delete Surrounding Chars (["''"])
 return {
-  "kylechui/nvim-surround",
+  -- https://github.com/kylechui/nvim-surround
+  'kylechui/nvim-surround',
   version = "*", -- Use for stability; omit to use `main` branch for the latest features
   event = "VeryLazy",
   opts = {}
