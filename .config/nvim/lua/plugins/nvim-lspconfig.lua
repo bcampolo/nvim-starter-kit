@@ -28,7 +28,6 @@ return {
         -- 'cssls', -- requires npm to be installed
         -- 'html', -- requires npm to be installed
         'lua_ls',
-        -- 'intelephense', -- requires npm to be installed
         -- 'jsonls', -- requires npm to be installed
         'lemminx',
         'marksman',
