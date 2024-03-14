@@ -1,4 +1,6 @@
-# Neovim Starter Kit 🕹⚡🤖 #
+# Neovim Starter Kit for Java 🕹⚡☕ #
+
+This is a variant of the normal [Neovim Starter Kit](https://github.com/bcampolo/nvim-starter-kit) specialized for Java development.
 
 This is my personalized Neovim Starter Kit.  IMO it is a very well structured, clean configuration for getting started with Neovim.  It uses the [lazy.nvim](https://github.com/folke/lazy.nvim) package manager, which allows plugins to be added simply by dropping a plugin spec file into your plugins folder.  Each plugin file in my configuration is well commented and you can remove any plugin file that you don't need or want.  A lot of Neovim users recommend kickstart.nvim, which I agree is a great resource due to its simplicity, but I believe this Starter Kit directory structure is much easier to maintain in the long run.
 
@@ -10,7 +12,8 @@ This is my personalized Neovim Starter Kit.  IMO it is a very well structured, c
 ********************************************************************************
 
 ## YouTube Guide ##
-[YouTube Guide](https://www.youtube.com/watch?v=33NLeHvFKxU) for this Starter Kit
+- [YouTube Guide](https://www.youtube.com/watch?v=TryxysOh-fI) for this Neovim Starter Kit for Java
+- [YouTube Guide](https://www.youtube.com/watch?v=33NLeHvFKxU) for the normal Neovim Starter Kit
 
 ********************************************************************************
 
@@ -20,7 +23,8 @@ This is my personalized Neovim Starter Kit.  IMO it is a very well structured, c
 - [Nerd Font](https://www.nerdfonts.com/) - Needed to see nice icons in Neovim
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - Needed for Telescope Fuzzy Finder
 - [xclip](https://linuxconfig.org/how-to-use-xclip-on-linux) - Needed for system clipboard support
-- [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - Needed for some LSP servers (see commented lines in [nvim-lspconfig.lua](.config/nvim/lua/plugins/nvim-lspconfig.lua))
+- [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - Needed for some LSP servers (see ensure_installed in [nvim-lspconfig.lua](.config/nvim/lua/plugins/nvim-lspconfig.lua))
+- [Java JDK](https://openjdk.org/) - Version 17 or later
 
 ## Optional ##
 - **TMUX**
@@ -64,6 +68,8 @@ After installing all of the prerequisites, you can start Neovim by running `nvim
     cd ~/git
     # Clone Starter Kit into your git directory
     git clone https://github.com/bcampolo/nvim-starter-kit
+    # Switch to the java branch
+    git checkout java
     # Make the Neovim configuration directory
     mkdir -p ~/.config/nvim
     # Copy the Starter Kit Neovim configuration to your Neovim configuration
@@ -78,6 +84,8 @@ After installing all of the prerequisites, you can start Neovim by running `nvim
 
 - Once Neovim is started, you may see a number of messages from Lazy, Mason and Treesitter installing plugins, LSP servers, and syntax highlighting.  You may see some initial errors.  There may be plugins that are still installing.  Press enter if instructed to.  Wait a bit for everything to finish installing.  Press q to close the Lazy UI.  Once everything is done installing, quit and restart Neovim one more time.
 
+- Update the TODOs in [java.lua](.config/nvim/ftplugin/java.lua) by adding your JDK location and Java runtimes needed for your specific projects.
+
 - Now everything should be setup, but it is possible that some plugins are not working correctly.  Run `:checkhealth` from within Neovim and investigate any errors that you encounter.
 
 ## Starter Kit Structure ##
@@ -85,6 +93,7 @@ After installing all of the prerequisites, you can start Neovim by running `nvim
 ├── .config
 │   └── nvim
 │       ├── ftplugin                                
+│       │   ├── java.lua                    # Add files here in the form filetype.lua
 │       │   ├── markdown.lua                    # Add files here in the form filetype.lua
 │       │   └── ...                             # to change options based on file type (not extension)
 │       ├── lua

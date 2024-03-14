@@ -106,10 +106,49 @@ return {
 
     -- Add dap configurations based on your language/adapter settings
     -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
-    -- dap.configurations.xxxxxxxxxx = {
-    --   {
-    --   },
-    -- }
+    dap.configurations.java = {
+      {
+        name = "Debug Launch (2GB)";
+        type = 'java';
+        request = 'launch';
+        vmArgs = "" ..
+          "-Xmx2g "
+      },
+      {
+        name = "Debug Attach (8000)";
+        type = 'java';
+        request = 'attach';
+        hostName = "127.0.0.1";
+        port = 8000;
+      },
+      {
+        name = "Debug Attach (5005)";
+        type = 'java';
+        request = 'attach';
+        hostName = "127.0.0.1";
+        port = 5005;
+      },
+      {
+        name = "My Custom Java Run Configuration",
+        type = "java",
+        request = "launch",
+        -- You need to extend the classPath to list your dependencies.
+        -- `nvim-jdtls` would automatically add the `classPaths` property if it is missing
+        -- classPaths = {},
+
+        -- If using multi-module projects, remove otherwise.
+        -- projectName = "yourProjectName",
+
+        -- javaExec = "java",
+        mainClass = "replace.with.your.fully.qualified.MainClass",
+
+        -- If using the JDK9+ module system, this needs to be extended
+        -- `nvim-jdtls` would automatically populate this property
+        -- modulePaths = {},
+        vmArgs = "" ..
+          "-Xmx2g "
+      },
+    }
   end
 }
 
