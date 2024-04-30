@@ -30,6 +30,7 @@ local config = {
 
     -- Eclipse jdtls location
     '-jar', vim.env.HOME .. '/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar',
+    -- TODO Update this to point to the correct jdtls subdirectory for your OS (config_linux, config_mac, config_win, etc)
     '-configuration', vim.env.HOME .. '/.local/share/nvim/mason/packages/jdtls/config_linux',
     '-data', workspace_dir
   },
