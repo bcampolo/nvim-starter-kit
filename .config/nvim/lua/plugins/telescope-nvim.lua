@@ -3,7 +3,6 @@ return {
   -- https://github.com/nvim-telescope/telescope.nvim
   'nvim-telescope/telescope.nvim',
   lazy = true,
-  branch = '0.1.x',
   dependencies = {
     -- https://github.com/nvim-lua/plenary.nvim
     { 'nvim-lua/plenary.nvim' },
@@ -22,7 +21,12 @@ return {
         vertical = {
           width = 0.75
         }
-      }
+      },
+      path_display = {
+        filename_first = {
+          reverse_directories = true
+        }
+      },
     }
   }
 }
