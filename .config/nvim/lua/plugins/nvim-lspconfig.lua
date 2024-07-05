@@ -17,7 +17,7 @@ return {
 
     -- Additional lua configuration, makes nvim stuff amazing!
     -- https://github.com/folke/neodev.nvim
-    {'folke/neodev.nvim' },
+    { 'folke/neodev.nvim', opts = {} },
   },
   config = function ()
     require('mason').setup()
