@@ -5,15 +5,18 @@ local jdtls = require("jdtls")
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = home .. "/jdtls-workspace/" .. project_name
 
+local system_os = ""
+
 -- Determine OS
--- Use this option to avoid explicitly adding manually everytime you switch OS e.g "config_linux", "config_mac"
--- This saves a lot of time if you are working with multiple OS e.g Linux or Mac OS
 if vim.fn.has("mac") == 1 then
-	CONFIG = "mac"
+	system_os = "mac"
 elseif vim.fn.has("unix") == 1 then
-	CONFIG = "linux"
+	system_os = "linux"
+elseif vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+	system_os = "win"
 else
-	print("Unsupported system")
+	print("OS not found, defaulting to 'linux'")
+	system_os = "linux"
 end
 
 -- Needed for debugging
@@ -48,7 +51,7 @@ local config = {
 		home .. "/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
 		-- TODO Update this to point to the correct jdtls subdirectory for your OS (config_linux, config_mac, config_win, etc)
 		"-configuration",
-		home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. CONFIG,
+		home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. system_os,
 		"-data",
 		workspace_dir,
 	},
