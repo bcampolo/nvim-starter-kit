@@ -49,7 +49,6 @@ local config = {
 		-- Eclipse jdtls location
 		"-jar",
 		home .. "/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
-		-- TODO Update this to point to the correct jdtls subdirectory for your OS (config_linux, config_mac, config_win, etc)
 		"-configuration",
 		home .. "/.local/share/nvim/mason/packages/jdtls/config_" .. system_os,
 		"-data",
