@@ -66,6 +66,8 @@ After installing all of the prerequisites, you can start Neovim by running `nvim
     cd ~/git
     # Clone Starter Kit into your git directory
     git clone https://github.com/bcampolo/nvim-starter-kit
+    # Switch into starter kit directory
+    cd nvim-starter-kit
     # Switch to the games branch
     git checkout games
     # Make the Neovim configuration directory
