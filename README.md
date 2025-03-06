@@ -24,7 +24,7 @@ This is my personalized Neovim Starter Kit.  IMO it is a very well structured, c
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - Needed for Telescope Fuzzy Finder
 - [xclip](https://linuxconfig.org/how-to-use-xclip-on-linux) - Needed for system clipboard support
 - [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - Needed for some LSP servers (see ensure_installed in [nvim-lspconfig.lua](.config/nvim/lua/plugins/nvim-lspconfig.lua))
-- [Java JDK](https://openjdk.org/) - Version 17 or later
+- [Java JDK](https://openjdk.org/) - Version 21 or later (previous versions of JDTLS worked with version 17, but as of January 9th 2025, the latest JDTLS version requires version 21 or higher)
 
 ## Optional ##
 - **TMUX**
