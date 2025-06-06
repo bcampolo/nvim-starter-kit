@@ -24,6 +24,12 @@ return {
     { 'folke/neodev.nvim', opts = {} },
   },
   config = function ()
+    local lspconfig = require('lspconfig')
+    local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local lsp_attach = function(client, bufnr)
+      -- Create your keybindings here...
+      end
+
     require('mason').setup()
     require('mason-lspconfig').setup({
       -- Install these LSPs automatically
@@ -40,6 +46,18 @@ return {
         'marksman',
         'quick_lint_js',
         'yamlls',
+      },
+      handlers = {
+    -- Call setup on each LSP server
+        function(server_name)
+          -- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
+          if server_name ~= 'jdtls' then
+            lspconfig[server_name].setup({
+              on_attach = lsp_attach,
+              capabilities = lsp_capabilities,
+            })
+          end
+        end
       }
     })
 
@@ -55,24 +73,7 @@ return {
     -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim/issues/39
     vim.api.nvim_command('MasonToolsInstall')
 
-    local lspconfig = require('lspconfig')
-    local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-    local lsp_attach = function(client, bufnr)
-      -- Create your keybindings here...
-    end
 
-    -- Call setup on each LSP server
-    require('mason-lspconfig').setup_handlers({
-      function(server_name)
-        -- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
-        if server_name ~= 'jdtls' then
-          lspconfig[server_name].setup({
-            on_attach = lsp_attach,
-            capabilities = lsp_capabilities,
-          })
-        end
-      end
-    })
 
     -- Lua LSP settings
     lspconfig.lua_ls.setup {
